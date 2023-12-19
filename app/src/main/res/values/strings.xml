@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MediMate</string>
+    <string name="please_fill_all_fields">Please fill all fields</string>
+    <string name="signup_success">signed up successfully</string>
+    <string name="signup_failed">signup failed</string>
+    <string name="user_already_signed_up">user already signed up</string>
+    <string name="passwords_do_not_match">passwords do not match</string>
+    <string name="login_successful">Login successful</string>
+    <string name="invalid_credentials">invalid credentials</string>
+    <string name="medTableCol1">name</string>
+    <string name="medTableCol2">dose</string>
+    <string name="medTableCol3">next dose in :</string>
+</resources>

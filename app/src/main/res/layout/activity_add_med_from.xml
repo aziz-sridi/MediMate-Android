@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/fillformtxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fill up the form"
+            android:textColor="@color/lavender"
+            android:layout_gravity="center"
+            android:textSize="24sp"
+            android:layout_margin="20dp"
+            />
+        <EditText
+            android:id="@+id/etMedName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Medication Name"
+            android:textColor="@color/lavender"
+            android:textColorHint="@color/lavender"
+            android:inputType="text"
+            android:background="@drawable/border_background"
+            android:drawablePadding="20dp"
+            android:padding="20dp"
+            android:drawableLeft="@drawable/baseline_drive_file_rename_outline_24"/>
+
+        <!-- Chronic or Not Chronic Radio Group -->
+        <RadioGroup
+            android:id="@+id/radioGroupChronic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            android:layout_gravity="center">
+
+            <RadioButton
+                android:id="@+id/rbChronic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/lavender"
+
+                android:text="Chronic"/>
+
+            <RadioButton
+                android:id="@+id/rbNotChronic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/lavender"
+
+                android:text="Not Chronic"/>
+
+        </RadioGroup>
+
+        <!-- Non-Chronic: Days, Months, Years -->
+        <LinearLayout
+            android:id="@+id/layoutNonChronic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="20dp">
+
+            <!-- Year Container -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textViewDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select Day"
+                    android:layout_marginRight="5dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:clickable="true"
+                    android:onClick="onDayClick"
+                    android:textColor="@color/lavender"
+                    android:background="@drawable/border_background"
+                    android:textColorHint="@color/lavender"/>
+
+
+                <ListView
+                    android:id="@+id/listViewYear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+            <!-- Month Container -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewMonth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select Month"
+                    android:layout_marginRight="5dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:clickable="true"
+                    android:onClick="onMonthClick"
+                    android:textColor="@color/lavender"
+                    android:background="@drawable/border_background"
+                    android:textColorHint="@color/lavender"/>
+
+                <ListView
+                    android:id="@+id/listViewMonth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+            <!-- Day Container -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewYear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select Year"
+                    android:layout_marginRight="5dp"
+                    android:padding="15dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:onClick="onYearClick"
+                    android:background="@drawable/border_background"
+                    android:textColor="@color/lavender"
+                    android:textColorHint="@color/lavender"/>
+
+                <ListView
+                    android:id="@+id/listViewDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:textColor="@color/lavender"
+                    android:textColorHint="@color/lavender"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Positive Integer Field and Flexible Time Checkbox -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Positive Integer Field -->
+            <EditText
+                android:id="@+id/etPillsPerDay"
+                android:layout_width="244dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/border_background"
+                android:drawableLeft="@drawable/baseline_medication_liquid_24"
+                android:drawablePadding="20dp"
+                android:hint="Doses Per Day"
+                android:inputType="number"
+                android:padding="20dp"
+                android:textColor="@color/lavender"
+                android:textColorHint="@color/lavender" />
+
+            <!-- OK Button -->
+            <Button
+                android:id="@+id/btnOk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OK" />
+
+            <!-- Flexible Time Checkbox -->
+        </LinearLayout>
+
+        <!-- Medication Timing Table -->
+        <TableLayout
+            android:id="@+id/tableTiming"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
+
+            <!-- Table Header -->
+            <TableRow>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Dose"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Set Time"/>
+            </TableRow>
+
+        </TableLayout>
+
+        <!-- Confirm Button -->
+        <Button
+            android:id="@+id/btnConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Confirm"/>
+    </LinearLayout>
+</ScrollView>
